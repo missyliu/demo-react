@@ -6,9 +6,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
+import {createStore, applyMiddleware} from 'redux';
 import App from './App';
+import reducer from './reducer';
 
 const history = createBrowserHistory();
+const store = createStore(
+    reducer
+);
+const action = type => store.dispatch({type});
 
 function render() {
     ReactDOM.render(
@@ -20,3 +26,4 @@ function render() {
 }
 
 render();
+store.subscribe(render);
