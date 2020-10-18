@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const Layout = () => {
     return (
         <React.Fragment>
-            xxx1
+            Layout
         </React.Fragment>
     );
 };
