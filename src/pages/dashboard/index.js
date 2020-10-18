@@ -7,13 +7,18 @@ import ReactDOM from 'react-dom';
 import {Router} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
 import {createStore, applyMiddleware} from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import App from './App';
 import reducer from './reducer';
+import rootSaga from './sagas';
 
 const history = createBrowserHistory();
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-    reducer
+    reducer,
+    applyMiddleware(sagaMiddleware)
 );
+sagaMiddleware.run(rootSaga);
 const action = type => store.dispatch({type});
 
 function render() {
