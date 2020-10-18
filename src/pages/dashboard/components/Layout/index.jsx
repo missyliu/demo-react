@@ -1,18 +1,19 @@
 /**
- * @file   首页
+ * @file   布局
  * @author MissyLiu
  */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Layout = () => {
+const Layout = ({text}) => {
     return (
         <React.Fragment>
-            Layout
+            {text}
         </React.Fragment>
     );
 };
-
-Layout.propTypes = {};
+Layout.propTypes = {
+    text: PropTypes.string.isRequired
+};
 
 export default Layout;

@@ -1,0 +1,16 @@
+.active {
+    position: relative;
+}
+
+.active::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 4px;
+    background: #2f88ff;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+}
